@@ -1,0 +1,17 @@
+Django
+gunicorn
+psycopg2-binary
+requests
+Celery==4.3
+redis
+django-redis
+django-modeltranslation
+django-celery
+django-celery-beat
+django-redis-sessions
+django-authtools
+ipython
+bs4
+django-cors-headers
+pillow
+
