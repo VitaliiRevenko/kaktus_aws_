@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from shop import views
-from shop.views import main_page, category_view, product_detail, contact_me
+from shop.views import main_page, category_view, product_detail, contact_me, delivery_and_pay, info_about_us
 from shop.views import CategoryView
 
 from rest_framework import routers
@@ -54,5 +54,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     ##
-    path('contact', contact_me, name='contact' )
+    path('contact', contact_me, name='contact' ),
+    path('delivery_pay', delivery_and_pay, name='deliv_pay'),
+    path('about_us', info_about_us, name = 'about_us')
 ]

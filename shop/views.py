@@ -36,7 +36,15 @@ def main_page(request):
     })
 
 def config_context(request):
-    return {'PRIMARY_PHONE': '0682707080', 'SECOND_PHONE': '0682700770', 'CONTACT_EMAIL': 'info@vrevenko.com'}
+    return {'PRIMARY_PHONE': '0682707080', 'SECOND_PHONE': '0682700770', 'CONTACT_EMAIL': 'info@vrevenko.com',
+            'FACEBOOK': 'www.facebook.com/vitaliy.revenko', 'INSTAGRAM': 'www.instagram.com/vrevenko',
+            'PINTEREST': 'www.pinterest.com/vitaliyrevenko', 'EMAIL': 'vitalirevenko84@gmail.com'}
+
+def delivery_and_pay(request):
+    return render(request, 'delivery_pay.html')
+
+def info_about_us(request):
+    return render(request, 'about_us.html')
 
 def contact_me(request):
     return render(request, 'contact.html')
