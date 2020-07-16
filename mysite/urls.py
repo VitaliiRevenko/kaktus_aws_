@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 from shop import views
-from shop.views import main_page, category_view, product_detail, contact_me, delivery_and_pay, info_about_us
+from shop.views import main_page, category_view, product_detail, contact_me, delivery_and_pay, info_about_us, \
+    product_view
 from shop.views import CategoryView
 
 from rest_framework import routers
@@ -56,5 +57,6 @@ urlpatterns = [
     ##
     path('contact', contact_me, name='contact' ),
     path('delivery_pay', delivery_and_pay, name='deliv_pay'),
-    path('about_us', info_about_us, name = 'about_us')
+    path('about_us', info_about_us, name = 'about_us'),
+    path('product', product_view, name= 'product')
 ]

@@ -14,6 +14,7 @@ admin.site.register(ArticlePicture)
 admin.site.register(Page)
 admin.site.register(Oders)
 admin.site.register(OrderProducts)
+#admin.site.register(CategoryImage)
 
 
 # Register your models here.

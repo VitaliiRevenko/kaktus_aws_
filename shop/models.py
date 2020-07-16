@@ -3,6 +3,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=255)
     parent_category = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True)
+    image = models.ImageField(null=True)
 
     @property
     def child(self):
@@ -22,7 +23,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.__repr__()
-
+#############
+# class CategoryImage(models.Model):
+#     path = models.ImageField()
+#     product = models.ForeignKey(Category, on_delete=models.CASCADE)
+################
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -49,6 +54,7 @@ class Product(models.Model):
 class Picture(models.Model):
     path = models.ImageField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
 
     def __repr__(self):
         return self.path.name

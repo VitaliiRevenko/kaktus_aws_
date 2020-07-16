@@ -54,13 +54,43 @@ def category_view(request, **kwargs):
     return render(request, 'category.html', {
         "cat": get_object_or_404(Category, pk=kwargs.get('id_category')),
     })
+    # return render(request, 'categoryes.html', {
+    #     "cat": get_object_or_404(Category, pk=kwargs.get('id_category'))
+    # })
 
 def product_detail(request, pk):
     return render(request, 'full_product.html', {
         "item": get_object_or_404(Product, pk=pk)
     })
 
+def product_view(request):
+    return render(request, 'product.html')
+
 class CategoryView(APIView):
     def get(self, request):
         name = Category.objects.all()
         return Response({"name": name})
+
+
+
+###################################################### POST
+# from django.shortcuts import render
+# from django.http import HttpResponseRedirect
+#
+# def get_name(request):
+#     # if this is a POST request we need to process the form data
+#     if request.method == 'POST':
+#         # create a form instance and populate it with data from the request:
+#         form = SendForm(request.POST)
+#         # check whether it's valid:
+#         if form.is_valid():
+#             # process the data in form.cleaned_data as required
+#             # ...
+#             # redirect to a new URL:
+#             return HttpResponseRedirect('/thanks/')
+#
+#     # if a GET (or any other method) we'll create a blank form
+#     else:
+#         form = NameForm()
+#
+#     return render(request, 'name.html', {'form': form})

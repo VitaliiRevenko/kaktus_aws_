@@ -8,20 +8,20 @@
             {% for cat in catlist %}
             <li class="card">
                 <a href="{% url 'one_category' id_category=cat.pk %}">
-                    <img src="{% static 'assets/images/main_page/catalog_1.jpg' %}" alt="Flover">
+                    <img src="{{ cat.image.url }}" alt="Flowers">
                 </a>
                 <a href="{% url 'one_category' id_category=cat.pk %}" class="link">
                     {{ cat.name }}
                 </a>
                 {% if cat.has_child %}
-                {% for cat in cat.child %}
-                <span class="arrow"></span>
+                <span class="arrow_sub"></span>
                 <ul class="sub_list">
+                    {% for cat in cat.child %}
                     <li class="sub_card">
                         <a href="{% url 'one_category' id_category=cat.pk %}" class="sub_link">{{ cat.name }}</a>
                     </li>
+                    {% endfor %}
                 </ul>
-                {% endfor %}
                 {% endif %}
             </li>
             {% endfor %}
