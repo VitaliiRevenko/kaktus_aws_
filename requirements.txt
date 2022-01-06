@@ -2,7 +2,7 @@ Django
 gunicorn
 psycopg2-binary
 requests
-Celery==4.3
+Celery==5.2.2
 redis
 django-redis
 django-modeltranslation
